@@ -1,0 +1,30 @@
+@if (isModalOpen()) {
+  <div
+    class="relative z-10"
+    aria-labelledby="modal-title"
+    role="dialog"
+    aria-modal="true"
+    data-testid="modalContainer"
+  >
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity">
+      <div
+        class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+      >
+        <div
+          class="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-md sm:p-6"
+        >
+          <div class="flex justify-end">
+            <button
+              data-testid="closeModalButton"
+              (click)="close()"
+              class="font-medium text-base text-red-600"
+            >
+              fechar
+            </button>
+          </div>
+          <ng-content></ng-content>
+        </div>
+      </div>
+    </div>
+  </div>
+}
